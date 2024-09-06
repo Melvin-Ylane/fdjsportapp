@@ -1,0 +1,19 @@
+.footer{
+    border-top: 1px solid rgba(0,0,0,.1);
+    .heart {
+        color: #eb5e28;
+    }
+}
+.footer nav ul a:not(.btn) {
+    color: #66615b;
+}
+.footer ul li a{
+    font-size: inherit;
+    text-transform: none;
+}
+
+.footer .copyright {
+    color: #66615b;
+    font-size: inherit;
+    line-height: 1.8;
+}

@@ -1,0 +1,35 @@
+<header>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+				<div class="d-flex flex-wrap w-100 align-items-center justify-content-center justify-content-lg-start">
+					<form class="col-12 mb-3 mb-lg-0 me-lg-3" role="search">
+							<div class="col-12">
+								<app-search-field
+									searchTerm="name"
+									bindLabel="name"
+									bindValue="_id"
+									placeholder="Rechercher une league"
+									notFoundText="Aucune league trouvée"
+									[multiple]="false"
+									(change)="onSearchInput($event)"
+									[service]="leagueServi">
+								</app-search-field>
+							</div>
+						<!-- <input type="search" class="form-control" placeholder="Search..." aria-label="Search"> -->
+					</form>
+				</div>
+		</div>
+	</nav>
+</header>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="loader-content" *ngIf="onSearch">
+		  <img class="loader big" src="assets/loader.gif">
+		</div>
+		<div class="col-6 col-lg-3 py-3 " *ngFor="let team of teamsList">
+			<div class="picture-item" (click)="goToTeamDetails(team._id)">
+				<img [src]="team.thumbnail" class="w-100" alt="thumbnail">
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<header>
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+		<div class="container-fluid">
+            <div class="d-flex flex-wrap w-100 align-items-center">
+                    <div class="col-auto">
+                        <button type="button" class="btn btn-outline-primary no-border" (click)="goBack()">Back</button>
+                    </div>
+                    <div class="col">
+                        <h4 class="mb-0 text-center">{{team.name}}</h4>
+                    </div>
+            </div>
+		</div>
+	</nav>
+</header>
+<div class="d-flex flex-column">
+    <ng-container *ngIf="team.players.length == 0">
+        <h2>No player found</h2>
+    </ng-container>
+    <div class="player-item" *ngFor="let player of team.players">
+        <div class="container-fluid">
+            <div class="row align-items-top align-items-lg-center">
+                <div class="col-4 col-lg-2">
+                    <img [src]="player.thumbnail" class="w-100" alt="thumbnail">
+                </div>
+                <div class="col desc-content">
+                    <h4>{{player.name}}</h4>
+                    <p style="font-style: italic;">{{player.position}}</p>
+                    <p>birthDate: {{player.born | date:'yyyy-MM-dd'}}</p>
+                    <p style="font-style: italic;">price: {{player.signin.amount | currency:player.signin.currency.toUpperCase(): 'symbol' : '1.0-0'}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

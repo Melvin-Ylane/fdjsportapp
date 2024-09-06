@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+@import "node_modules/bootstrap/scss/bootstrap.scss";
+@import "~@ng-select/ng-select/themes/default.theme.css";
+
+.loader {
+    width: 20px;
+    margin-right: .5rem;
+    &.big{
+        width: 100px;
+        margin: 0px;
+        filter: invert(0.7);
+    }
+}
+.loader-content {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    z-index: 3;
+    background-color: rgba(255,255,255,.55);
+}
+.picture-item:hover {
+    cursor: pointer;
+}
+    
